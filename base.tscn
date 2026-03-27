@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://bstp8mbah2pas"]
 
+[ext_resource type="Script" uid="uid://dew5ee2nbipc0" path="res://Script/base.gd" id="1_rpg24"]
+
 [node name="Base" type="Node2D" unique_id=1682150125]
+script = ExtResource("1_rpg24")
+
+[node name="DebugLabel" type="Label" parent="." unique_id=2042760904]
+offset_right = 40.0
+offset_bottom = 23.0
