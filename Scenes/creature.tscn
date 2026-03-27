@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://djly63bkl78yn"]
+
+[ext_resource type="Script" uid="uid://dcls4ckg1b4kv" path="res://Scripts/creature.gd" id="1_01bph"]
+[ext_resource type="Texture2D" uid="uid://cv43m00ubxhbc" path="res://icon.svg" id="2_ulpcw"]
+
+[node name="Creature" type="Node2D" unique_id=1668021681]
+script = ExtResource("1_01bph")
+sprite = ExtResource("2_ulpcw")
+life = null
+attack = null
+defense = null
+speed = null
+energy = null
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=2058817884]
+texture = ExtResource("2_ulpcw")
