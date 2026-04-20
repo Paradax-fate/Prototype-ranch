@@ -15,6 +15,11 @@ run/main_scene="uid://bstp8mbah2pas"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Enums="*uid://d2ebtlp4nqw8g"
+Const="*uid://cwd1s6b6xv8k1"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

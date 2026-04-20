@@ -1,16 +1,24 @@
 [gd_scene format=3 uid="uid://djly63bkl78yn"]
 
-[ext_resource type="Script" uid="uid://dcls4ckg1b4kv" path="res://Scripts/creature.gd" id="1_01bph"]
+[ext_resource type="Script" uid="uid://dcls4ckg1b4kv" path="res://Scripts/Species/creature.gd" id="1_01bph"]
 [ext_resource type="Texture2D" uid="uid://cv43m00ubxhbc" path="res://icon.svg" id="2_ulpcw"]
+[ext_resource type="Script" uid="uid://c3ygfeijjg0ht" path="res://Scripts/Species/specie.gd" id="3_ktm42"]
+[ext_resource type="Script" uid="uid://dlo8a6f6kw7po" path="res://Scripts/Species/vitae.gd" id="5_idm37"]
+[ext_resource type="Script" uid="uid://c3rceftco81ux" path="res://Scripts/Species/genome.gd" id="6_jkbom"]
 
 [node name="Creature" type="Node2D" unique_id=1668021681]
 script = ExtResource("1_01bph")
-sprite = ExtResource("2_ulpcw")
-life = null
-attack = null
-defense = null
-speed = null
-energy = null
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=2058817884]
 texture = ExtResource("2_ulpcw")
+
+[node name="Stats" type="Node" parent="." unique_id=1933865684]
+
+[node name="Specie" type="Node" parent="Stats" unique_id=2040063740]
+script = ExtResource("3_ktm42")
+
+[node name="Genome" type="Node" parent="Stats" unique_id=2054718778]
+script = ExtResource("6_jkbom")
+
+[node name="Vitae" type="Node" parent="Stats" unique_id=1059727624]
+script = ExtResource("5_idm37")

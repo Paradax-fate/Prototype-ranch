@@ -1,0 +1,37 @@
+extends Node
+
+enum Type {
+	FERTILITY,
+	GESTATION,
+	OFFSPRING,
+	MUTATION,
+	STABILITY,
+	LIFESPAN,
+	HEALTH,
+	ENERGY
+}
+
+enum Gender{
+	NONE,
+	FEMALE,
+	MALE
+}
+
+enum Gender_RULE{
+	NONE,
+	BINARY
+}
+
+enum Dominacy{
+	DOMINANT, 
+	RECESIVE
+}
+
+enum Diet {
+	CARNIVORE,
+	OMNIVORE,
+	HERBIVORE,
+	MINERALVORE,
+	ELECTRIVORE,
+	ALLVORE
+}
