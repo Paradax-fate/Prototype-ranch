@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://djly63bkl78yn"]
+
+[ext_resource type="Script" uid="uid://dcls4ckg1b4kv" path="res://Scripts/creature.gd" id="1_01bph"]
+[ext_resource type="Texture2D" uid="uid://cv43m00ubxhbc" path="res://icon.svg" id="2_ulpcw"]
+[ext_resource type="Script" uid="uid://dieo2fh284vwi" path="res://Scripts/stats_controller.gd" id="3_ulpcw"]
+[ext_resource type="Script" uid="uid://b6gfox1m40p0g" path="res://Scripts/stats.gd" id="4_ktm42"]
+[ext_resource type="Script" uid="uid://y34bbvhjyduh" path="res://Scripts/stats_def.gd" id="5_jkbom"]
+[ext_resource type="Script" uid="uid://c3rceftco81ux" path="res://Scripts/genome.gd" id="6_jkbom"]
+
+[sub_resource type="Resource" id="Resource_xugjv"]
+resource_local_to_scene = true
+script = ExtResource("5_jkbom")
+type = 6
+min_value = 50.0
+value = 150.0
+metadata/_custom_type_script = "uid://y34bbvhjyduh"
+
+[node name="Creature" type="Node2D" unique_id=1668021681]
+script = ExtResource("1_01bph")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=2058817884]
+texture = ExtResource("2_ulpcw")
+
+[node name="StatsController" type="Node" parent="." unique_id=1933865684]
+script = ExtResource("3_ulpcw")
+
+[node name="Base" type="Node" parent="StatsController" unique_id=2040063740]
+script = ExtResource("4_ktm42")
+stats = Dictionary[int, ExtResource("5_jkbom")]({
+6: SubResource("Resource_xugjv")
+})
+
+[node name="Final" type="Node" parent="StatsController" unique_id=1059727624]
+script = ExtResource("4_ktm42")
+
+[node name="Genome" type="Node" parent="StatsController" unique_id=2054718778]
+script = ExtResource("6_jkbom")
