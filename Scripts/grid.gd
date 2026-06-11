@@ -1,39 +1,43 @@
-class_name grid
+# res://Scripts/Grid.gd
+extends Node
 
-var width = 10
-var height = 10
-var base = []
+const GRID_SIZE := Vector2i(10, 10)
 
-func _init():
-	create_matrix()
+var grid: Array = []
 
-func create_matrix():
-	base.clear()
-	
-	for y in range(height):
-		var row = []
-		for x in range(width):
+signal cell_changed(x: int, y: int, data)
+
+func _ready() -> void:
+	_init_grid()
+
+func _init_grid() -> void:
+	# Inicializa 10x10 con null
+	grid = []
+	for y in range(GRID_SIZE.y):
+		var row: Array = []
+		for x in range(GRID_SIZE.x):
 			row.append(null)
-		base.append(row)
+		grid.append(row)
 
+func is_inside(x: int, y: int) -> bool:
+	return x >= 0 and y >= 0 and x < GRID_SIZE.x and y < GRID_SIZE.y
 
-func can_place(room, pos_x, pos_y):
-	
-	if pos_x + room.width > width:
-		return false
-		
-	if pos_y + room.height > height:
-		return false
-	
-	for y in range(room.height):
-		for x in range(room.width):
-			if base[pos_y + y][pos_x + x] != null:
-				return false
-	
-	return true
+func get_cell(x: int, y: int):
+	# Asegura que grid exista
+	if not _is_grid_inited():
+		_init_grid()
+	if not is_inside(x, y):
+		return null
+	return grid[y][x]
 
+func set_cell(x: int, y: int, value):
+	# Asegura que grid exista
+	if not _is_grid_inited():
+		_init_grid()
+	if not is_inside(x, y):
+		return
+	grid[y][x] = value
+	emit_signal("cell_changed", x, y, value)
 
-func place(room, pos_x, pos_y):
-	for y in range(room.height):
-		for x in range(room.width):
-			base[pos_y + y][pos_x + x] = room
+func _is_grid_inited() -> bool:
+	return typeof(grid) != TYPE_NIL and grid.size() > 0

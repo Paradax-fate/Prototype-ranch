@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://bstp8mbah2pas"]
 
-[ext_resource type="Script" uid="uid://dew5ee2nbipc0" path="res://Scripts/base.gd" id="1_rpg24"]
+[ext_resource type="Script" uid="uid://hefipcgxklio" path="res://Scripts/grid.gd" id="1_8rhti"]
+[ext_resource type="Script" uid="uid://dew5ee2nbipc0" path="res://Scripts/GridRender.gd" id="2_ohhpf"]
+[ext_resource type="Script" uid="uid://cth6m2bwvq51u" path="res://Scripts/GridLines.gd" id="3_21bcp"]
 
-[node name="Base" type="Node2D" unique_id=1682150125]
-script = ExtResource("1_rpg24")
+[node name="BaseGrid" type="Node2D" unique_id=326847784]
 
-[node name="DebugLabel" type="Label" parent="." unique_id=2042760904]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Grid" type="Node" parent="." unique_id=1252851751]
+script = ExtResource("1_8rhti")
+
+[node name="Render" type="Node2D" parent="." unique_id=739564983]
+script = ExtResource("2_ohhpf")
+
+[node name="GridLines" type="Node2D" parent="." unique_id=759779397]
+script = ExtResource("3_21bcp")
