@@ -1,0 +1,23 @@
+extends Node
+
+enum Type {
+	FERTILITY,
+	GESTATION,
+	OFFSPRING,
+	MUTATION,
+	STABILITY,
+	LIFESPAN,
+	HEALTH,
+	ENERGY
+}
+
+enum Gender{
+	NONE,
+	FEMALE,
+	MALE
+}
+
+enum Dominacy{
+	DOMINANT, 
+	RECESIVE
+}
