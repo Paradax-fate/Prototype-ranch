@@ -5,8 +5,8 @@ const CELL_SIZE := Vector2(64, 64)
 
 @export var textures: Dictionary = {
 	"empty": null,
-	"wall": null,        # "res://assets/sprites/wall.png" 
-	"generator": null     # "res://assets/sprites/generator.png" 
+	"wall": null,
+	"generator": null
 }
 
 var _grid_ref: Node = null
@@ -16,22 +16,6 @@ func _ready() -> void:
 	_grid_ref = get_parent().get_node("Grid")
 	if _grid_ref and _grid_ref.has_signal("cell_changed"):
 		_grid_ref.connect("cell_changed", Callable(self, "_on_cell_changed"))
-	_prepare_placeholders()
-
-func _prepare_placeholders() -> void:
-	# Placeholder de textura si no existen
-	if textures.wall == null:
-		textures.wall = _create_placeholder_texture(Color8(200, 50, 50))
-	if textures.generator == null:
-		textures.generator = _create_placeholder_texture(Color8(50, 120, 200))
-
-func _create_placeholder_texture(color: Color) -> Texture2D:
-	var img := Image.new()
-	img.create(64, 64, false, Image.FORMAT_RGBA8)
-	img.fill(color)
-	var tex := ImageTexture.new()
-	tex.create_from_image(img)
-	return tex
 
 func _on_cell_changed(x: int, y: int, data) -> void:
 	var key = str(x) + "," + str(y)
@@ -57,3 +41,17 @@ func _remove_sprite(key: String):
 		if is_instance_valid(sp):
 			sp.queue_free()
 		_sprites_by_cell.erase(key)
+
+
+func place_room_in_cell_full_image(x: int, y: int, room_tex: Texture2D) -> void:
+	# Limpiar la celda existente
+	var key = str(x) + "," + str(y)
+	_remove_sprite(key)
+
+	
+	var room_sprite = Sprite2D.new()
+	room_sprite.texture = room_tex
+	room_sprite.position = Vector2(x * CELL_SIZE.x + CELL_SIZE.x * 0.5, y * CELL_SIZE.y + CELL_SIZE.y * 0.5)
+
+	add_child(room_sprite)
+	_sprites_by_cell[key] = room_sprite

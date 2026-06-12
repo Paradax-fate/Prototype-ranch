@@ -11,7 +11,7 @@ func _ready() -> void:
 	_init_grid()
 
 func _init_grid() -> void:
-	# Inicializa 10x10 con null
+	
 	grid = []
 	for y in range(GRID_SIZE.y):
 		var row: Array = []
@@ -23,7 +23,7 @@ func is_inside(x: int, y: int) -> bool:
 	return x >= 0 and y >= 0 and x < GRID_SIZE.x and y < GRID_SIZE.y
 
 func get_cell(x: int, y: int):
-	# Asegura que grid exista
+	
 	if not _is_grid_inited():
 		_init_grid()
 	if not is_inside(x, y):
@@ -31,7 +31,7 @@ func get_cell(x: int, y: int):
 	return grid[y][x]
 
 func set_cell(x: int, y: int, value):
-	# Asegura que grid exista
+	
 	if not _is_grid_inited():
 		_init_grid()
 	if not is_inside(x, y):

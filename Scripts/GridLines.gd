@@ -9,20 +9,20 @@ extends Node2D
 func _draw():
 	var w = grid_size.x * cell_size.x
 	var h = grid_size.y * cell_size.y
-	# líneas verticales
+	
 	for x in range(grid_size.x + 1):
 		var px = x * cell_size.x
 		draw_line(Vector2(px, 0), Vector2(px, h), line_color, line_thickness)
-	# líneas horizontales
+	
 	for y in range(grid_size.y + 1):
 		var py = y * cell_size.y
 		draw_line(Vector2(0, py), Vector2(w, py), line_color, line_thickness)
 
 func _ready():
-	# Pedir redraw de forma diferida (robusto en Godot 4.x)
+	
 	self.call_deferred("update")
 
 func _notification(what):
 	if what == NOTIFICATION_TRANSFORM_CHANGED:
-		# Solicita redraw cuando cambie la transform
+		
 		self.call_deferred("update")
