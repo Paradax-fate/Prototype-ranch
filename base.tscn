@@ -35,3 +35,6 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Panel/GridContainer" unique_id=766873788]
 layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/GridContainer" unique_id=498007982]
+layout_mode = 2

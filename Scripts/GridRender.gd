@@ -6,13 +6,14 @@ const CELL_SIZE := Vector2(64, 64)
 @export var textures: Dictionary = {
 	"empty": null,
 	"wall": null,
-	"generator": null
+	"generator": null 
 }
 
 var _grid_ref: Node = null
 var _sprites_by_cell := {}
 
 func _ready() -> void:
+	
 	_grid_ref = get_parent().get_node("Grid")
 	if _grid_ref and _grid_ref.has_signal("cell_changed"):
 		_grid_ref.connect("cell_changed", Callable(self, "_on_cell_changed"))
