@@ -17,10 +17,10 @@ extends Control
 
 func _ready():
 	# Configurar valores por defecto si se quiere
-	place_btn.connect("pressed", self, "_on_place_pressed")
-	undo_btn.connect("pressed", self, "_on_undo_pressed")
-	save_btn.connect("pressed", self, "_on_save_pressed")
-	load_btn.connect("pressed", self, "_on_load_pressed")
+	# place_btn.connect("pressed", self, "_on_place_pressed")
+	# undo_btn.connect("pressed", self, "_on_undo_pressed")
+	# save_btn.connect("pressed", self, "_on_save_pressed")
+	# load_btn.connect("pressed", self, "_on_load_pressed")
 
 	# Actualizar previsualización inicial
 	_update_preview()

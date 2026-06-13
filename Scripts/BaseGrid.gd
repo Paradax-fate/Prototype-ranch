@@ -26,8 +26,7 @@ func _place_in_target(grid_renderer: Node) -> void:
 
 func _unhandled_input(event):
 	
-	if event is InputEventKey and event.pressed:
-		match event.scancode:
+	if event is InputEventKey and event.pressed		match event.scancode:
 			KEY_Q:
 				_place_at(0, 0)
 			KEY_W:
