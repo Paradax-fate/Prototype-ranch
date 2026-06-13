@@ -1,12 +1,8 @@
-
-# res://Scripts/BaseGrid.gd
 extends Node2D
 
-# Ruta al GridRenderer en la escena
 @export var grid_renderer_path: NodePath
 @export var room_texture_path: String = "res://Sprite/Reference/Cuadrado rojo.jpg"
-@export var target_cell: Vector2i = Vector2i(0, 0) 
-
+@export var target_cell: Vector2i = Vector2i(0, 0)
 
 @export var enable_runtime_place: bool = true
 
@@ -25,8 +21,9 @@ func _place_in_target(grid_renderer: Node) -> void:
 		print("No se pudo cargar la textura de habitación desde: ", room_texture_path)
 
 func _unhandled_input(event):
-	
-	if event is InputEventKey and event.pressed		match event.scancode:
+	# Manejo de teclas rápida
+	if event is InputEventKey and event.pressed:
+		match event.scancode:
 			KEY_Q:
 				_place_at(0, 0)
 			KEY_W:

@@ -1,7 +1,7 @@
 # res://Scripts/RoomDemoUI.gd
 extends Control
 
-# Rutas hacia los nodos relevantes (ajusta si cambias nombres)
+
 @export var base_grid_node_path: NodePath
 @export var grid_renderer_node_path: NodePath
 @export var room_texture_path: String = "res://Sprite/Reference/Cuadrado rojo.jpg"
@@ -22,7 +22,7 @@ func _ready():
 	# save_btn.connect("pressed", self, "_on_save_pressed")
 	# load_btn.connect("pressed", self, "_on_load_pressed")
 
-	# Actualizar previsualización inicial
+
 	_update_preview()
 
 func _update_preview():
@@ -40,11 +40,11 @@ func _on_place_pressed():
 		push_error("GridRenderer no encontrado")
 		return
 
-	# Obtener coordenadas objetivo
+	
 	var tx = int(target_x_spin.value)
 	var ty = int(target_y_spin.value)
 
-	# Usamos la textura actual para la habitación
+	
 	var tex = load(room_texture_path)
 	if tex is Texture2D:
 		grid_renderer.call("place_room_in_cell_full_image", tx, ty, tex)
@@ -52,13 +52,13 @@ func _on_place_pressed():
 		push_error("La textura de habitación no es válida")
 
 func _on_undo_pressed():
-	# Implementa lógica de undo si la tienes
+	
 	pass
 
 func _on_save_pressed():
-	# Implementa guardado (JSON/scene) si quieres
+
 	pass
 
 func _on_load_pressed():
-	# Implementa carga
+	
 	pass
