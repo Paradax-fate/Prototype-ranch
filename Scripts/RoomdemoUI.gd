@@ -13,7 +13,7 @@ extends Control
 @onready var place_btn: Button = $"VBoxContainer/Actions/PlaceButton"
 @onready var undo_btn: Button = $"VBoxContainer/Actions/UndoButton"
 @onready var save_btn: Button = $"VBoxContainer/Actions/SaveButton"
-@onready var load_btn: Button = $"VBoxContainer/Actions/LoadButton"
+# @onready var load_btn: Button = $"VBoxContainer/Actions/LoadButton"
 
 func _ready():
 	# Configurar valores por defecto si se quiere

@@ -3,24 +3,21 @@
 [ext_resource type="Script" uid="uid://hefipcgxklio" path="res://Scripts/grid.gd" id="1_8rhti"]
 [ext_resource type="Script" uid="uid://ydcmmxdxa2eb" path="res://Scripts/BaseGrid.gd" id="1_ohhpf"]
 [ext_resource type="Script" uid="uid://dew5ee2nbipc0" path="res://Scripts/GridRender.gd" id="2_ohhpf"]
-[ext_resource type="Script" uid="uid://cth6m2bwvq51u" path="res://Scripts/GridLines.gd" id="3_21bcp"]
+[ext_resource type="Script" uid="uid://cth6m2bwvq51u" path="res://Scripts/GridLines.gd" id="4_21bcp"]
 [ext_resource type="Script" uid="uid://kn5mg4rlnhgj" path="res://Scripts/RoomdemoUI.gd" id="5_21bcp"]
 
 [node name="BaseGrid" type="Node2D" unique_id=326847784]
 script = ExtResource("1_ohhpf")
-grid_renderer_path = null
-room_texture_path = null
-target_cell = null
-enable_runtime_place = null
 
 [node name="Grid" type="Node" parent="." unique_id=1252851751]
 script = ExtResource("1_8rhti")
 
 [node name="Render" type="Node2D" parent="." unique_id=739564983]
 script = ExtResource("2_ohhpf")
+textures = null
 
 [node name="GridLines" type="Node2D" parent="." unique_id=759779397]
-script = ExtResource("3_21bcp")
+script = ExtResource("4_21bcp")
 
 [node name="Panel" type="Control" parent="." unique_id=1110651368]
 layout_mode = 3
@@ -45,76 +42,67 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Tipo" type="Label" parent="Panel" unique_id=1176136372]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="OptionButton" type="OptionButton" parent="Panel" unique_id=846090012]
+visible = false
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 20.0
 
 [node name="Previsualisacion" type="HBoxContainer" parent="Panel" unique_id=1504369142]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Preview" type="Label" parent="Panel" unique_id=477046605]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Preview textura" type="TextureRect" parent="Panel" unique_id=661554532]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Cordenadas" type="HBoxContainer" parent="Panel" unique_id=1281927298]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="X" type="Label" parent="Panel" unique_id=1191956155]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Target X" type="SpinBox" parent="Panel" unique_id=1599775315]
+visible = false
 layout_mode = 0
 offset_right = 86.5
 offset_bottom = 31.0
 
 [node name="Y" type="Label" parent="Panel" unique_id=1515074315]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Target Y" type="SpinBox" parent="Panel" unique_id=1065086397]
+visible = false
 layout_mode = 0
 offset_right = 86.5
 offset_bottom = 31.0
 
 [node name="Actions" type="HBoxContainer" parent="Panel" unique_id=1239952636]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="PlaceButton" type="Button" parent="Panel" unique_id=869323838]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="UndoButton" type="Button" parent="Panel" unique_id=1048396814]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="SaveButton" type="Button" parent="Panel" unique_id=1076387199]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="LoadButton" type="Button" parent="Panel" unique_id=311265426]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0

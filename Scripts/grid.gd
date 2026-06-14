@@ -1,5 +1,5 @@
 # res://Scripts/Grid.gd
-extends Node
+extends Node 
 
 const GRID_SIZE := Vector2i(10, 10)
 

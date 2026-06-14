@@ -45,7 +45,7 @@ func _remove_sprite(key: String):
 
 
 func place_room_in_cell_full_image(x: int, y: int, room_tex: Texture2D) -> void:
-	# Limpiar la celda existente
+
 	var key = str(x) + "," + str(y)
 	_remove_sprite(key)
 
